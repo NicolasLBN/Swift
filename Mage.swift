@@ -25,7 +25,7 @@ class Mage: Character {
   
   // inflict 5 points in less damage or healing for all weapons with more than 5 damage or healing points
   private func damagedWeapon(character: Character) {
-    if character.weapon is Scepter || character.weapon is StaffOfNordrassil || character.weapon is MoonLightGreatSword || character.weapon is StaffOfFire {
+    if character.weapon is Scepter {
       let typeHealing = "healing"
       if character.weapon.heal > 5 {
         character.weapon.heal -= 5

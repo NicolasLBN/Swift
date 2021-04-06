@@ -95,9 +95,6 @@ class Game {
           myCharacter = arrayTeams[nbTeam].characters[userChoice() - 1]
           
           if myCharacter.life > 0 {
-            // a chest appears randomly in front of the character and a new weapon appears
-            let randomChest = Chest()
-            randomChest.randomChest(character: myCharacter)
             
             if myCharacter.isBlocked == false {
               if let healer = myCharacter as? Healer { // check if the character is a healer

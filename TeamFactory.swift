@@ -10,13 +10,13 @@ class TeamFactory {
   private func listCharactersMenu() {
     print("")
     print("=======================================================================")
-    print("🛡 Create your team - Choose 3 characters between 1 and 4 : 🛡")
+    print("🛡 Create your team - Choose 3 characters between 1 and 5 : 🛡")
     print("-----------------------------------------------------------------------")
     print("1 - Assassin ------------- Life: 100 --- Damage: 20 "
       + "\n2 - Healer  ------------- Life: 70  --- Heal: 20 + Dispel 🔮"
       + "\n3 - Tank   ------------- Life: 120 --- Damage: 10 "
       + "\n4 - Archer   ------------- Life: 60  --- Damage: 30 "
-      + "\n5 - Elementary Of Ice --- Life: 80  --- Damage: 15 + Power to freeze 🥶"
+      + "\n5 - Mage --- Life: 80  --- Damage: 15 + Power to freeze 🥶"
       + "\n=======================================================================")
   }
   
@@ -37,7 +37,7 @@ class TeamFactory {
     switch userChoice {
     case 1: // assassin
       let assassin = Assassin(name: uniqueCharacterName())
-      print("Added an Assasin to the team with the name \"\(assassin.name)\".")
+      print("Added an Assassin to the team with the name \"\(assassin.name)\".")
       return assassin
     case 2: // healer
       let healer = Healer(name: uniqueCharacterName())
