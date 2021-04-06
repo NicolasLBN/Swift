@@ -1,21 +1,13 @@
-//
-//  Game.swift
-//  P3_Battle
-//
-//  Created by Angelique Babin on 20/12/2018.
-//  Copyright © 2018 Angelique Babin. All rights reserved.
-//
-
 import Foundation
 
 class Game {
   
-  //MARK: - Vars
+  //Vars
   private var arrayTeams = [Team]() // array of the teams with the arrays of 3 the characters
   private var endlessLoop = true
   private var battleIsEnded = false
 
-  //MARK: - Methodes
+  //Methodes
   // function for start game
   func start() {
     var userChoice = 0
@@ -108,8 +100,8 @@ class Game {
             randomChest.randomChest(character: myCharacter)
             
             if myCharacter.isBlocked == false {
-              if let wizard = myCharacter as? Wizard { // check if the character is a wizard
-                wizardHeal(wizard: wizard, nbTeam: nbTeam)
+              if let healer = myCharacter as? Healer { // check if the character is a healer
+                HealerHeal(healer: healer, nbTeam: nbTeam)
               } else {
                 // attack enemy
                 if nbTeam == 0 {
@@ -144,13 +136,13 @@ class Game {
   }
   
   // Choose a character of the team to heal him
-  private func wizardHeal(wizard: Wizard, nbTeam: Int) {
+  private func HealerHeal(healer: Healer, nbTeam: Int) {
     arrayTeams[nbTeam].displayTeam()
     print("===============================================")
     print("🔮 Choose a character of your team to heal him :")
     print("-----------------------------------------------")
     let myCharacter = arrayTeams[nbTeam].characters[userChoice() - 1]
-    wizard.heal(character: myCharacter)
+    healer.heal(character: myCharacter)
   }
   
   // Choose a character enemy of the other team to attack

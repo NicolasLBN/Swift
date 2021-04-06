@@ -1,16 +1,7 @@
-//
-//  Character.swift
-//  P3_Battle
-//
-//  Created by Angelique Babin on 18/12/2018.
-//  Copyright © 2018 Angelique Babin. All rights reserved.
-//
-
 import Foundation
 
 class Character {
   
-  //MARK: - Vars
   let type: String
   var life: Int
   var weapon: Weapon
@@ -18,7 +9,6 @@ class Character {
   let lifeMaxLimit: Int
   var isBlocked: Bool
 
-  //MARK: - Init
   init(type: String, life: Int, weapon: Weapon, name: String, isBlocked: Bool) {
     self.type = type
     self.life = life
@@ -28,7 +18,6 @@ class Character {
     self.isBlocked = isBlocked
   }
   
-  //MARK: - Methodes
   private func receive(damage: Int) {
     self.life -= damage
     // If life is negative, the life of the character is set to 0
@@ -65,6 +54,6 @@ class Character {
     print(" ")
     print("\(index) - \(type) \"\(name)\" - Points of life : \(life) - Weapon : \(weapon.nameWeapon) - Points of damage : \(weapon.damage) - Points for healing : \(weapon.heal)")
   }
-} // END Class Character
+} 
 
 

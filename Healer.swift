@@ -1,21 +1,13 @@
-//
-//  Wizard.swift
-//  P3_Battle
-//
-//  Created by Angelique Babin on 18/12/2018.
-//  Copyright © 2018 Angelique Babin. All rights reserved.
-//
-
 import Foundation
 
-class Wizard: Character { // type heal
+class Healer: Character { 
   
-  //MARK: - Inits
+  //Inits
   init(name: String) {
-    super.init(type: "Wizard", life: 70, weapon: Scepter.init(), name: name, isBlocked: false)    
+    super.init(type: "Healer", life: 70, weapon: Scepter.init(), name: name, isBlocked: false)    
   }
   
-  //MARK: - Methodes
+  //Methodes
   func heal(character: Character) {
     if life > 0 {
       if character.life > 0 {

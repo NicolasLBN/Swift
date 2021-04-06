@@ -1,20 +1,10 @@
-//
-//  Team.swift
-//  P3_Battle
-//
-//  Created by Angelique Babin on 21/12/2018.
-//  Copyright © 2018 Angelique Babin. All rights reserved.
-//
-
 import Foundation
 
 class Team {
 
-  //MARK: - Vars
+ 
   var characters = [Character]()
 
-  // MARK: - Methodes
-  // display of list of the teams
   func displayTeam() {
     for i in 0..<characters.count {
       let character = characters[i]

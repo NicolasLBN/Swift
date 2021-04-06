@@ -1,10 +1,3 @@
-//
-//  Chest.swift
-//  P3_Battle
-//
-//  Created by Angelique Babin on 23/01/2019.
-//  Copyright © 2019 Angelique Babin. All rights reserved.
-//
 
 import Foundation
 
@@ -20,7 +13,7 @@ class Chest {
       let randomWeaponHeal = arrayWeaponHeal.randomElement()
       let randomWeaponDamage = arrayWeaponDamage.randomElement()
       
-      if character is Wizard {
+      if character is Healer {
         let typeCharacter = "healing"
         guard let randomWeaponHeal = randomWeaponHeal else { return }
         character.weapon = randomWeaponHeal

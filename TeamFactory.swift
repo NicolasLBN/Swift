@@ -1,29 +1,21 @@
-//
-//  TeamFactory.swift
-//  P3_Battle
-//
-//  Created by Angelique Babin on 04/01/2019.
-//  Copyright © 2019 Angelique Babin. All rights reserved.
-//
-
 import Foundation
 
 class TeamFactory {
   
-  //MARK: - Vars
+  //Vars
   private var checkName = [String]()
   var arrayTeams = [Team]()
   
-  // MARK: - Methodes
+  //Methodes
   private func listCharactersMenu() {
     print("")
     print("=======================================================================")
     print("🛡 Create your team - Choose 3 characters between 1 and 4 : 🛡")
     print("-----------------------------------------------------------------------")
-    print("1 - Fighter ------------- Life: 100 --- Damage: 10 "
-      + "\n2 - Wizard  ------------- Life: 70  --- Heal: 20 + Dispel 🔮"
-      + "\n3 - Giant   ------------- Life: 120 --- Damage: 5 "
-      + "\n4 - Dwarf   ------------- Life: 60  --- Damage: 25 "
+    print("1 - Assassin ------------- Life: 100 --- Damage: 20 "
+      + "\n2 - Healer  ------------- Life: 70  --- Heal: 20 + Dispel 🔮"
+      + "\n3 - Tank   ------------- Life: 120 --- Damage: 10 "
+      + "\n4 - Archer   ------------- Life: 60  --- Damage: 30 "
       + "\n5 - Elementary Of Ice --- Life: 80  --- Damage: 15 + Power to freeze 🥶"
       + "\n=======================================================================")
   }
@@ -43,26 +35,26 @@ class TeamFactory {
     
     
     switch userChoice {
-    case 1: // fighter
-      let fighter = Fighter(name: uniqueCharacterName())
-      print("Added a fighter to the team with the name \"\(fighter.name)\".")
-      return fighter
-    case 2: // wizard
-      let wizard = Wizard(name: uniqueCharacterName())
-      print("Added a Wizard to the team with the name \"\(wizard.name)\".")
-      return wizard
+    case 1: // assassin
+      let assassin = Assassin(name: uniqueCharacterName())
+      print("Added an Assasin to the team with the name \"\(assassin.name)\".")
+      return assassin
+    case 2: // healer
+      let healer = Healer(name: uniqueCharacterName())
+      print("Added a Healer to the team with the name \"\(healer.name)\".")
+      return healer
     case 3: // giant
-      let giant = Giant(name: uniqueCharacterName())
-      print("Added a Giant to the team with the name \"\(giant.name)\".")
-      return giant
+      let tank = Tank(name: uniqueCharacterName())
+      print("Added a Tank to the team with the name \"\(tank.name)\".")
+      return tank
     case 4: // dwarf
-      let dwarf = Dwarf(name: uniqueCharacterName())
-      print("Added a Dwarf to the team with the name \"\(dwarf.name)\".")
-      return dwarf
+      let archer = Archer(name: uniqueCharacterName())
+      print("Added an Aecher to the team with the name \"\(archer.name)\".")
+      return archer
     case 5: // Elementary Of Ice
-      let elementaryOfIce = ElementaryOfIce(name: uniqueCharacterName())
-      print("Added a Elementary Of Ice to the team with the name \"\(elementaryOfIce.name)\".")
-      return elementaryOfIce
+      let mage = Mage(name: uniqueCharacterName())
+      print("Added a Mage to the team with the name \"\(mage.name)\".")
+      return mage
     default:
       return nil
     }

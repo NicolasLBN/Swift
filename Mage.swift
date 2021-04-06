@@ -1,22 +1,13 @@
-//
-//  ElementaryOfIce.swift
-//  P3_Battle
-//
-//  Created by Angelique Babin on 18/01/2019.
-//  Copyright © 2019 Angelique Babin. All rights reserved.
-//
-
 import Foundation
 
-class ElementaryOfIce: Character { // type attack
+class Mage: Character { 
   
-  //MARK: - Init
   init(name: String) {
-    super.init(type: "Elementary Of Ice", life: 80, weapon: BatOfIce.init(), name: name, isBlocked: false)
+    super.init(type: "Mage", life: 70, weapon: BatOfIce.init(), name: name, isBlocked: false)
   }
   
   
-  //MARK: - Methodes
+  //Methodes
   //BONUS - POWER TO FREEZE : Randomly, inflict 5 points in less damage or healing for all weapons with more than 5 damage or healing points OR freeze a character of the enemy team and will be blocked in the next round.
   override func attack(character: Character) { // attack + one special power
     super.attack(character: character)
@@ -70,5 +61,5 @@ class ElementaryOfIce: Character { // type attack
     print("🚫 No effect : The \(character.weapon.nameWeapon) of the \(character.type) \"\(character.name)\" has only 5 points of \(typeCharacter) left and can't lose more.")
     print("--------------------------------------------------------------------------------------------------------")
   }
-} // END class ElementaryOfIce
+} // END class Mage
 

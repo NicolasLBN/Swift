@@ -1,14 +1,6 @@
-//
-//  StaffOfFire.swift
-//  P3_Battle
-//
-//  Created by Angelique Babin on 18/01/2019.
-//  Copyright © 2019 Angelique Babin. All rights reserved.
-//
-
 import Foundation
 
-class StaffOfFire: Weapon { // type heal
+class StaffOfFire: Weapon { 
   init() {
     super.init(damage: 0, heal: 30, nameWeapon: "Staff Of Fire")
   }
