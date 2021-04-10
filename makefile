@@ -21,7 +21,7 @@ BatOfIce.a: BatOfIce.swift
 	$(RM) $(subst .swift,.o,$<)
 	$(SWIFTC) -emit-module $< -module-name $(subst .swift,,$<)
 	
-Character.a: Character.swift
+champion.a: champion.swift
 	$(SWIFTC) $(CFLAGS) -emit-library -emit-object $< -module-name $(subst .swift,,$<)
 	$(AR) rcs $@ $(subst .swift,.o,$<)
 	$(RM) $(subst .swift,.o,$<)

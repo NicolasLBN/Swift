@@ -1,50 +1,37 @@
 import Foundation
 
-class Healer: Character { 
+class Healer: Champion { 
   
   //Inits
   init(name: String) {
-    super.init(type: "Healer", life: 70, weapon: Scepter.init(), name: name, isBlocked: false)    
+    super.init(type: "Healer", life: 70, weapon: Scepter.init(), name: name)    
   }
   
   //Methodes
-  func heal(character: Character) {
+  func heal(champion: Champion) {
     if life > 0 {
-      if character.life > 0 {
+      if champion.life > 0 {
+          
+        champion.life += weapon.heal
         
-        dispel(character: character) // unlocked a character
-        
-        character.life += weapon.heal
-        
-        print("⚡️ Your \(character.type) \"\(character.name)\" has recovered \(weapon.heal) points of life by the \(weapon.nameWeapon) of your \(type) \"\(name)\" !⚡️")
-        if character.life >= character.lifeMaxLimit { // after a healing the character can't have more points of life than to the start
-          character.life = character.lifeMaxLimit
-          print("❇️ He has recovered the totality of his life points. ❇️")
+        print("⚡️ Your \(champion.type) \"\(champion.name)\" has recovered \(weapon.heal) points of life by the \(weapon.nameWeapon) of your \(type) \"\(name)\" !⚡️")
+        if champion.life >= champion.lifeMaxLimit { // after a healing the champion can't have more points of life than to the start
+          champion.life = champion.lifeMaxLimit
+          print("He has recovered the totality of his life points.")
         }
       } else {
-        print("❌ Your \(character.type), \"\(character.name)\" is already dead and cannot be resurrected !")
+        print("Your \(champion.type), \"\(champion.name)\" is already dead and cannot be resurrected !")
       }
     } else {
-      print("❌ Sorry your \(type) \"\(name)\" is already dead and you cannot heal !")
+      print("Sorry your \(type) \"\(name)\" is already dead and you cannot heal !")
     }
   }
   
-  // unlocked a character who has been blocked by the "Power Of Ice"
-  private func dispel(character: Character) {
-    if character.isBlocked == true {
-      character.isBlocked = false
-      print("🔮 Your \(character.type) \"\(character.name)\" as been unfrozen by your \(type) \"\(name)\" !")
-    }
+  // unlocked a champion who has been blocked by the "Power Of Ice"
+  
+  override func attack(champion: Champion) {
+    print("The \(type) \"\(name)\" can't attack but only to heal !")
   }
   
-  override func attack(character: Character) {
-    print("⛔️ The \(type) \"\(name)\" can't attack but only to heal !")
-  }
-  
-  // display the special power "dispel" to release from a spell
-  override func display(index: Int) {
-    super.display(index: index)
-    print("### 🔮 Dispel : ✨ Power that unlocks a character that has been frozen. ✨###")
-  }
 }
 

@@ -3,29 +3,26 @@ import Foundation
 class Team {
 
  
-  var characters = [Character]()
+  var champions = [Champion]()
 
   func displayTeam() {
-    for i in 0..<characters.count {
-      let character = characters[i]
-      if character.life <= 0 {
+    for i in 0..<champions.count {
+      let champion = champions[i]
+      if champion.life <= 0 {
         print(" ")
-        print("\(i+1) - The \(character.type) \"\(character.name)\" is dead ❌ !")
+        print("\(i+1) - The \(champion.type) \"\(champion.name)\" is dead!")
         print(" ")
       } else {
-        character.display(index: i+1)
-        if character.isBlocked == true {
-          print("@@@@ ⭕️🥶 The \(character.type) \"\(character.name)\" is freezed !!! 🥶⭕️ @@@@")
-        }
+        champion.display(index: i+1)
       }
     }
   }
   
-  // function returns true if the character is dead
+  // function returns true if the champion is dead
   func isDead() -> Bool {
     var isDead = false
-    for character in characters {
-      if character.life <= 0 {
+    for champion in champions {
+      if champion.life <= 0 {
         isDead = true
       } else { //false
         isDead = false

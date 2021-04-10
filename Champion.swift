@@ -1,55 +1,54 @@
 import Foundation
 
-class Character {
+class Champion {
   
   let type: String
   var life: Int
   var weapon: Weapon
   let name: String
   let lifeMaxLimit: Int
-  var isBlocked: Bool
+  
 
-  init(type: String, life: Int, weapon: Weapon, name: String, isBlocked: Bool) {
+  init(type: String, life: Int, weapon: Weapon, name: String) {
     self.type = type
     self.life = life
     self.weapon = weapon
     self.name = name
     self.lifeMaxLimit = life
-    self.isBlocked = isBlocked
   }
   
   private func receive(damage: Int) {
     self.life -= damage
-    // If life is negative, the life of the character is set to 0
+    // If life is negative, the life of the champion is set to 0
     if self.life <= 0 {
       self.life = 0
     }
   }
   
   // attack enemy
-  func attack(character: Character) {
+  func attack(champion: Champion) {
     if life > 0 {
-      if character.life > 0 {
-        character.receive(damage: weapon.damage)
+      if champion.life > 0 {
+        champion.receive(damage: weapon.damage)
         print("-----------------------------------------------------------------------------------------------------")
-        print("🛡 The \(character.type) \"\(character.name)\" received \(weapon.damage) points of damage by the \(weapon.nameWeapon) of your \(type) \"\(name)\" ! 🛡")
+        print("The \(champion.type) \"\(champion.name)\" received \(weapon.damage) points of damage by the \(weapon.nameWeapon) of your \(type) \"\(name)\" !")
         print("-----------------------------------------------------------------------------------------------------")
-        if character.life <= 0 {
-          print("❌ The \(character.type) \"\(character.name)\" is dead !!! ❌")
+        if champion.life <= 0 {
+          print("The \(champion.type) \"\(champion.name)\" is dead !!! ")
         }
       } else {
         print("--------------------------------------------------------")
-        print("The \(character.type) \"\(character.name)\" is already dead ! ❌")
+        print("The \(champion.type) \"\(champion.name)\" is already dead !")
         print("--------------------------------------------------------")
       }
     } else {
       print("---------------------------------------------------------------------------------------")
-      print("Sorry the \(type) \"\(name)\" is already dead and cannot attack the \(character.type) \"\(character.name)\" ! ❌")
+      print("Sorry the \(type) \"\(name)\" is already dead and cannot attack the \(champion.type) \"\(champion.name)\" !")
       print("---------------------------------------------------------------------------------------")
     }
   }
   
-  // Display the description of our character on the screen
+  // Display the description of our champion on the screen
   func display(index: Int) {
     print(" ")
     print("\(index) - \(type) \"\(name)\" - Points of life : \(life) - Weapon : \(weapon.nameWeapon) - Points of damage : \(weapon.damage) - Points for healing : \(weapon.heal)")

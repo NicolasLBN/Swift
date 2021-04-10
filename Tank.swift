@@ -1,8 +1,8 @@
 import Foundation
 
-class Tank: Character { 
+class Tank: Champion { 
   
   init(name: String) {
-    super.init(type: "Tank", life: 120, weapon: Mace.init(), name: name, isBlocked: false)
+    super.init(type: "Tank", life: 120, weapon: Club.init(), name: name)
   }
 }
